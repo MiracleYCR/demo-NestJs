@@ -25,9 +25,9 @@ export class UserService {
   }
 
   findUser(id: number): UserDto[] {
-    // throw new HttpException('拒绝请求！！！', HttpStatus.FORBIDDEN);
-    throw new BadRequestException();
+    throw new Error();
 
+    // throw new BadRequestException();
     return this.users.filter((item) => item.id === id);
   }
 }

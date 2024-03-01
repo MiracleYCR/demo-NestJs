@@ -6,6 +6,7 @@ import {
   Param,
   Inject,
   UseFilters,
+  BadGatewayException,
 } from '@nestjs/common';
 import { UserService } from '../service/user.service';
 

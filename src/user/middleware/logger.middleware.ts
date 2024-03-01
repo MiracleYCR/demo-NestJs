@@ -13,6 +13,5 @@ export function loggerMiddleware(
   res: Response,
   next: NextFunction,
 ) {
-  console.log('request.......');
   next();
 }

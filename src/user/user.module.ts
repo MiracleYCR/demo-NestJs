@@ -10,7 +10,5 @@ import { UserController } from './controller/user.controller';
   controllers: [UserController],
 })
 export class UserModule {
-  constructor(private userService: UserService) {
-    console.log(this.userService);
-  }
+  constructor(private userService: UserService) {}
 }
