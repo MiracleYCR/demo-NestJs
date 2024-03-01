@@ -1,8 +1,17 @@
-import { Controller, Get, Post, Body, Param, Inject } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Inject,
+  UseFilters,
+} from '@nestjs/common';
 import { UserService } from '../service/user.service';
 
 import { UserDto } from '../dto/user.dto';
 import { CreateUserDto } from '../dto/user-create.dto';
+import { HttpExceptionFilter } from '../filter/httpException.filter';
 
 @Controller({ path: 'users' })
 export class UserController {

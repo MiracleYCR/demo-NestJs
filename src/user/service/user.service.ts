@@ -1,6 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { UserDto } from '../dto/user.dto';
 import { CreateUserDto } from '../dto/user-create.dto';
+
+import { BadRequestException } from '@nestjs/common';
+import { ForbiddenException } from '../exception/forbidden.exception';
 
 @Injectable()
 export class UserService {
@@ -22,7 +25,8 @@ export class UserService {
   }
 
   findUser(id: number): UserDto[] {
-    console.log(id);
+    // throw new HttpException('拒绝请求！！！', HttpStatus.FORBIDDEN);
+    throw new BadRequestException();
 
     return this.users.filter((item) => item.id === id);
   }
